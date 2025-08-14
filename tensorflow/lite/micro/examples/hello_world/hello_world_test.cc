@@ -55,14 +55,18 @@ TF_LITE_MICRO_TEST(LoadModelAndPerformInference) {
   TF_LITE_MICRO_EXPECT_EQ(interpreter.AllocateTensors(), kTfLiteOk);
 
   // Obtain a pointer to the model's input tensor
-  TfLiteTensor* input = interpreter.input(0);
+  // 의도적으로 실패
+ TF_LITE_MICRO_EXPECT_EQ(1, 2);
+ 
 
   // Make sure the input has the properties we expect
   TF_LITE_MICRO_EXPECT_NE(nullptr, input);
   // The property "dims" tells us the tensor's shape. It has one element for
   // each dimension. Our input is a 2D tensor containing 1 element, so "dims"
   // should have size 2.
-  TF_LITE_MICRO_EXPECT_EQ(2, input->dims->size);
+  // 의도적으로 실패
+  TF_LITE_MICRO_EXPECT_EQ(1, 2);
+ 
   // The value of each element gives the length of the corresponding tensor.
   // We should expect two single element tensors (one is contained within the
   // other).
