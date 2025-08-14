@@ -78,6 +78,8 @@ TF_LITE_MICRO_TEST(LoadModelAndPerformInference) {
   TfLiteStatus invoke_status = interpreter.Invoke();
   TF_LITE_MICRO_EXPECT_EQ(kTfLiteOk, invoke_status);
 
+  TF_LITE_MICRO_EXPECT_EQ(1234, 5678);
+
   // Obtain a pointer to the output tensor and make sure it has the
   // properties we expect. It should be the same as the input tensor.
   TfLiteTensor* output = interpreter.output(0);
