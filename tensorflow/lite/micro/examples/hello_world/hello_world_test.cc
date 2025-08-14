@@ -72,7 +72,7 @@ TF_LITE_MICRO_TEST(LoadModelAndPerformInference) {
   TF_LITE_MICRO_EXPECT_EQ(kTfLiteFloat32, input->type);
 
   // Provide an input value
-  input->data.f[0] = 0.;
+  input->data.f[5] = 0.;
 
   // Run the model on this input and check that it succeeds
   TfLiteStatus invoke_status = interpreter.Invoke();
